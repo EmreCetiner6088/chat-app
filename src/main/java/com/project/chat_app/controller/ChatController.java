@@ -19,8 +19,8 @@ public class ChatController {
 	@SendTo("/topic/public")
 	public ChatMessage addUser(@Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
 		// Web Socket session işleminde kullanıcı adı ekle.
-		headerAccessor.getSessionAttributes().put("username", chatMessag);
-		return message;
+		headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
+		return chatMessage;
 	}
 	
 }
